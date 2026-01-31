@@ -1,0 +1,75 @@
+.mainContent {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 80vh;
+    padding: 2rem;
+}
+
+.profileCard {
+    background-color: white;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    padding: 2rem;
+    max-width: 500px;
+    width: 100%;
+}
+
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 2rem;
+}
+
+.formTitle {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: #333;
+    margin: 0;
+}
+
+.editProfileButton {
+    background-color: #007bff;
+    color: white;
+    padding: 0.5rem 1rem;
+    border-radius: 4px;
+    text-decoration: none;
+    font-size: 0.9rem;
+    transition: background-color 0.3s ease;
+}
+
+.editProfileButton:hover {
+    background-color: #0056b3;
+}
+
+.avatarWrapper {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 1.5rem;
+}
+
+.avatar {
+    border-radius: 50%;
+    border: 3px solid #007bff;
+}
+
+.profileInfo {
+    background-color: #f8f9fa;
+    border-radius: 4px;
+    padding: 1.5rem;
+}
+
+.profileInfo p {
+    margin: 0.75rem 0;
+    color: #333;
+    font-size: 1rem;
+}
+
+.profileInfo p:first-child {
+    margin-top: 0;
+}
+
+.profileInfo p:last-child {
+    margin-bottom: 0;
+}

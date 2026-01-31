@@ -58,3 +58,15 @@ export const fetchNoteById = async (noteId: string) => {
     return data
 }
 
+interface SignUpData {
+    email: string;
+    password: string;
+}
+
+export const signUp = async (credentials: SignUpData) => {
+    const { data } = await axios.post("/users/signup", credentials, {
+        withCredentials: true
+    });
+    return data;
+}
+
