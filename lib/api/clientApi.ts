@@ -1,4 +1,5 @@
 import type { NewNoteContent, Note } from "../../types/note";
+import type { User } from "../../types/user";
 import { nextServer } from "./api";
 
 interface FetchNotesResponse {
@@ -73,10 +74,10 @@ export const checkSession = async () => {
     return response.data.success
 }
 export const getMe = async () => {
-    const { data } = await nextServer.get(`/users/me`);
+    const { data } = await nextServer.get<User>(`/users/me`);
     return data
 }
 export const updateMe = async (userData: { username: string }) => {
-    const { data } = await nextServer.patch("/users/me", userData);
+    const { data } = await nextServer.patch<User>("/users/me", userData);
     return data;
 };

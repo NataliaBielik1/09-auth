@@ -1,11 +1,16 @@
-"use client";
-
+import type { Metadata } from "next";
 import Link from "next/link";
-import { useAuthStore } from "@/lib/store/authStore";
+import Image from "next/image";
+import { getMe } from "@/lib/api/serverApi";
 import css from "./page.module.css";
 
-export default function Profile() {
-    const user = useAuthStore((state) => state.user);
+export const metadata: Metadata = {
+    title: "Profile | 09-auth",
+    description: "User profile information",
+};
+
+export default async function Profile() {
+    const user = await getMe();
 
     return (
         <main className={css.mainContent}>
@@ -17,12 +22,13 @@ export default function Profile() {
                     </Link>
                 </div>
                 <div className={css.avatarWrapper}>
-                    <img
-                        src={user?.avatar || "Avatar"}
+                    <Image
+                        src={user?.avatar || "/placeholder-avatar.png"}
                         alt="User Avatar"
                         width={120}
                         height={120}
                         className={css.avatar}
+                        priority
                     />
                 </div>
                 <div className={css.profileInfo}>
